@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+    <p><strong>Chilli Boom</strong>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית מוסן מנת. להאמית קרהשק סכעיט דז מא, מנכם למטכין נשואי מנורך. הועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש ערששף. זותה מנק הבקיץ אפאח דלאמת יבש, כאנה ניצאחו נמרגי שהכים תוק, הדש שנרא התידם הכייר וק.
+    </p>
+
+
+
+    <form action="/dashboard/" method="post">{% csrf_token %}
+
+        {{ form.non_field_errors }}
+        <div class="inputBloc">
+            <p>
+                {{form.name.errors}}
+                <label class="txtField" for="id_subject">Shop name:</label>
+                {{ form.name }}
+            </p>
+            <p>
+                {{form.website.errors}}
+                <label class="txtField" for="id_subject">Shop website:</label>
+                {{ form.website }}
+            </p>
+            <p>
+                {{form.photo.errors}}
+                <label class="txtField" for="id_subject">Shop photo:</label>
+                {{ form.photo }}
+            </p>
+            <p>
+                {{form.description.errors}}
+                <label class="txtField" for="id_subject">Shop description:</label>
+                {{ form.description }}
+            </p>
+            <p>
+                {{form.user.errors}}
+                <label class="txtField" for="id_subject">Shop user:</label>
+                {{ form.user }}
+            </p>
+            <p>
+                {{form.slug.errors}}
+                <label class="txtField" for="id_subject">Shop slug:</label>
+                {{ form.slug }}
+            </p>
+
+        </div>
+        <input type="submit" value="Submit" />
+    </form>
+
+
+
+
+</div>
+{% endblock %}

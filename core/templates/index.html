@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load static %}
+
+
+
+{% block content %}
+<p xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"><strong>Chilli Boom</strong> - the perfect place for lovers of Jolly things and a good shopping experience. Original gifts and designer toys, fashionable clothes and unusual footwear, stylish t-shirts and interesting bags, ideas for interior decoration and copyrights. And of course, special discounts!</p>
+
+          <ul class="products_list">
+             <li>
+                 <table>
+             {% for product in products %}
+                     {%if forloop.counter0|divisibleby:3%}
+                     <tr>
+                         {% endif %}
+                     <td>
+                   {% if product.photo %}
+                 <a href="/products/{{ product.slug }}/"> <img src="{{ product.photo|thumbnail_url:'small' }}"
+                         alt="{{ product }}"/></a>
+                   {% endif %}
+
+                    <strong> {{ product.price }}₪
+                        {% if product.sale_price %}
+                        SALE {{product.sale_price }}₪
+                        {% endif %}
+                        <img src="{{ STATIC_URL }}styles/images/icon/icon.png" alt="" />0</strong>
+
+                    <div><a href="/products/{{ product.slug }}/"> {{ product }}</a></div>
+
+                 <div class="info"><a href="/vendors/{{ product.vendor.slug }}/">{{ product.vendor }}</a></div>
+
+
+
+
+
+
+
+
+
+
+
+</td>
+                         {%if forloop.counter|divisibleby:3%}
+                     </tr>
+                         {% endif %}
+          {% endfor %}
+                 </table>
+{% endblock %}
+
+
+             </li>
+              </ul>
+
+
+
+
+

@@ -1,0 +1,97 @@
+{% load static %}
+{% load thumbnail %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+    <title>{{ index_page.title }}</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <link rel="stylesheet" href="{{ STATIC_URL }}styles/main.css" type="text/css"/>
+      <!--[if IE]><link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styles/ie.css" /><![endif]-->
+
+</head>
+
+<body>
+    <div id="wrapper">
+            <div  id= "header">
+                <a href="/"><img class="floatLeft" src="{{ STATIC_URL }}styles/images/logo.png" alt="Chilliboom" class="logo" /></a>
+
+<form id="search_form" class="search_form floatLeft">
+        <input type="text" value="Input here" size="40" name="search" id="search" class="input" />
+        <input type="submit" value="Search" id="search_button" class="button" />
+     </form>
+
+
+
+
+
+     <a class="floatLeft"  href="{% url socialauth_begin 'facebook' %}"><img src="{{ STATIC_URL }}styles/images/button/open_shop.png" alt="Open your shop" class="open_shop_link" /></a>
+
+
+      <ul class="main_menu floatLeft">
+             <li><a href="/products/">Products</a></li>
+              <li><a href="/shops/">All shops</a></li>
+             <li><a href="#">About projects</a></li>
+      </ul>
+           </div>
+
+    <div id="main_col">
+
+        {% block content %}
+        <div id="productlist">
+            {% for product in products %}
+            <p><a href="/products/{{ product.slug }}/"><img src="{{ product.image.url }}" />{{ product }}</a></p>
+            <p>{{ product.description }}</p>
+
+            {% endfor %}
+
+        {% endblock %}
+            </div>
+
+    </div>
+
+
+    <div id="footer">
+        <div class="footer_block">
+            <ul class="categories_products">
+                <li>
+                    <a href=""><img alt="#" src="{{ STATIC_URL }}styles/images/img/category1.jpg" /><span class="title">Shoes</span></a>
+                </li>
+                <li>
+                    <a href="#"><img alt="" src="{{ STATIC_URL }}styles/images/img/category2.jpg" /><span class="title">Shoes</span></a>
+                </li>
+                <li>
+                    <a href="#"><img alt="" src="{{ STATIC_URL }}styles/images/img/category3.jpg" /><span class="title">Shoes</span></a>
+                </li>
+                <li>
+                    <a href="#"><img alt="" src="{{ STATIC_URL }}styles/images/img/category4.jpg" /><span class="title">Shoes</span></a>
+                </li>
+                <li>
+                    <a href="#"><img alt="" src="{{ STATIC_URL }}styles/images/img/category5.jpg" /><span class="title">Shoes</span></a>
+                </li>
+                <li>
+                    <a href="#"><img alt="" src="{{ STATIC_URL }}styles/images/img/category1.jpg" /><span class="title">Shoes</span></a>
+                </li>
+                <li>
+                    <a href="#"><img alt="" src="{{ STATIC_URL }}styles/images/img/category1.jpg" /><span class="title">Shoes</span></a>
+                </li>
+                <li>
+                    <a href="#"><img alt="" src="{{ STATIC_URL }}styles/images/img/category1.jpg" /><span class="title">Shoes</span></a>
+                </li>
+                <li>
+                    <a href="#"><img alt="" src="{{ STATIC_URL }}styles/images/img/category1.jpg" /><span class="title">Shoes</span></a>
+                </li>
+                <li>
+                    <a href="#"><img alt="" src="{{ STATIC_URL }}styles/images/img/category1.jpg" /><span class="title">Shoes</span></a>
+                </li>
+                <li>
+                    <a href="#"><img alt="" src="{{ STATIC_URL }}styles/images/img/category1.jpg" /><span class="title">Shoes</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

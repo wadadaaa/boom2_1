@@ -1,0 +1,24 @@
+{% block content %}
+<h1>Регистрация</h1>
+
+<body>
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+    FB.init({
+        appId:'183306221847518', cookie:true,
+        status:true, xfbml:true
+    });
+</script>
+
+
+<fb:login-button>Login with Facebook !!!</fb:login-button>
+
+
+
+
+
+</body>
+
+
+{% endblock %}

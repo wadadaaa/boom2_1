@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load static %}
+
+
+ {% block content %}
+
+ <div id="main_col">
+
+      <h1>{{ products.0.vendor.name }}</h1>
+      <a href="{{ products.0.vendor.website }}"/> {{ products.0.vendor.website }} </a>
+       <h1>Avatar</h1>
+
+        <img src="{{ vendor.photo.url }}"/>
+
+      <p>{{ products.0.vendor.description }}</p>
+
+     <h2>Last arrivals from {{ products.0.vendor }}</h2>
+
+       <ul class="products">
+
+                     {% for product in products %}
+                               <li> <a href="/products/{{ product.slug }}/"><img style="text-align: center;" id="image_main" src="{{ product.photo|thumbnail_url:'small' }}" alt="{{ product }}"/></a></li>
+
+                   {% endfor %}
+
+     </ul>
+     </div>
+        {% endblock %}

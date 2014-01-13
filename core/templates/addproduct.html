@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load static %}
+
+
+           <div id="main_col">
+
+        <div id="productlist">
+ {% block content %}
+
+
+<form action="/addproduct/" method="post">{% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="inputBloc">
+        <p>
+            {{form.name.errors}}
+            <label class="txtField" for="id_subject">Product name:</label>
+            {{ form.name }}
+        </p>
+        <p>
+            {{form.slug.errors}}
+            <label class="txtField" for="id_subject">Slug:</label>
+            {{ form.slug }}
+        </p>
+        <p>
+            {{form.photo.errors}}
+            <label class="txtField" for="id_subject">Product photo:</label>
+            {{ form.photo }}
+        </p>
+        <p>
+            {{form.categories.errors}}
+            <label class="txtField" for="id_subject">Product categories:</label>
+            {{ form.categories }}
+        </p>
+        <p>
+            {{form.catalog.errors}}
+            <label class="txtField" for="id_subject">Product catalog:</label>
+            {{ form.catalog }}
+        </p>
+        <p>
+            {{form.description.errors}}
+            <label class="txtField" for="id_subject">Product descriptions:</label>
+            {{ form.description }}
+        </p>
+        <p>
+            {{form.price.errors}}
+            <label class="txtField" for="id_subject">Product price:</label>
+            {{ form.price }}
+        </p>
+        <p>
+            {{form.sale_price.errors}}
+            <label class="txtField" for="id_subject">Product sale price:</label>
+            {{ form.sale_price }}
+        </p>
+        <p>
+            {{form.is_active.errors}}
+            <label class="txtField" for="id_subject">Product activity:</label>
+            {{ form.is_active }}
+        </p>
+        <p>
+            {{form.is_featured.errors}}
+            <label class="txtField" for="id_subject">Product featured:</label>
+            {{ form.is_featured }}
+        </p>
+        <p>
+            {{form.quantity.errors}}
+            <label class="txtField" for="id_subject">Product quantity:</label>
+            {{ form.quantity }}
+        </p>
+        <p>
+            {{form.vendor.errors}}
+            <label class="txtField" for="id_subject">Product vendor:</label>
+            {{ form.vendor }}
+        </p>
+
+    <input type="submit" value="Submit" />
+</form>
+
+
+             </div>
+
+    </div>
+
+{% endblock %}

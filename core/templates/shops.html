@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load static %}
+
+
+        {% block content %}
+                  <h1>SHOWCASES :</h1>
+
+          {% for shop in shops %}
+                <div class="info"><a href="/vendors/{{ vendor.slug }}/">{{ vendor.name }}</a></div>
+          {% endfor %}
+        {% endblock %}

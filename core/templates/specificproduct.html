@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+
+<div id="main_col">
+{% block content %}
+
+    <h1>{{ product }}</h1>
+    <br>
+    {% if product.photo %}
+                    <img style="text-align: center;" id="image_main" src="{{ product.photo|thumbnail_url:'large' }}" alt="{{ product }}"/>
+                   {% endif %}
+                    <div>{{ product.description }}</div>
+                    <strong>{{ product.price }}₪
+                        <img src="{{ STATIC_URL }}styles/images/icon/icon.png" alt="" />0</strong>
+
+
+
+
+
+
+                    <div class="info"><a href="/vendors/{{ product.vendor.slug }}/">{{ product.vendor }}</a></div>
+
+
+{% endblock %}
+
+</div>

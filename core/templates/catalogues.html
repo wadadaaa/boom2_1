@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="cataloglist">
+    {% for catalog in catalogues %}
+    <p>{{ catalog }}</p>
+    <p><a href="/catalogues/{{ catalog.slug }}/"><{{ catalog }}</a></p>
+
+
+    {% endfor %}
+</div>
+{% endblock %}
+
+
