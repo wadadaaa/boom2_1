@@ -49,7 +49,7 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
     rating = RatingField(range=5) # 5 possible rating values, 1-5
-    photo = models.ImageField(verbose_name=u'Photo', upload_to="product_pic", blank=True, null=True)
+    photo = models.ImageField(verbose_name=u'Photo', upload_to="product_pic", blank=True)
     categories = models.ManyToManyField(Category)
     catalog = models.ForeignKey(Catalog)
     description = models.TextField(blank=True, help_text="Describe product")

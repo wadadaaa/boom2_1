@@ -9,7 +9,7 @@
  {% block content %}
 
 
-<form action="/addproduct/" method="post">{% csrf_token %}
+<form enctype="multipart/form-data" action="/addproduct/" method="post">{% csrf_token %}
     {{ form.non_field_errors }}
     <div class="inputBloc">
         <p>

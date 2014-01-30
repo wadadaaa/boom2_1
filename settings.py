@@ -2,6 +2,7 @@
 import os
 import os.path
 import sys
+import pdb; pdb.set_trace()
 
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__))))
